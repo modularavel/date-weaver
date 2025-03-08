@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Heart, MessageCircle, Search, Users, Bell, User, LogOut } from 'lucide-react';
 import { toast } from 'sonner';
+import ThemeToggle from './ThemeToggle';
 
 type NavItem = {
   label: string;
@@ -28,7 +29,7 @@ const Header = () => {
   };
   
   return (
-    <header className="sticky top-0 z-50 bg-date-primary/95 text-white backdrop-blur-sm shadow-md animate-fade-in">
+    <header className="sticky top-0 z-50 bg-date-primary/95 dark:bg-slate-900/95 text-white backdrop-blur-sm shadow-md animate-fade-in">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -64,9 +65,11 @@ const Header = () => {
           </nav>
           
           {/* User Menu */}
-          <div className="relative">
+          <div className="relative flex items-center">
+            <ThemeToggle />
+            
             <button
-              className="flex items-center space-x-2 bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
+              className="flex items-center space-x-2 bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors ml-2"
               onClick={() => setShowDropdown(!showDropdown)}
             >
               <div className="flex flex-col items-end">
@@ -82,7 +85,7 @@ const Header = () => {
             </button>
             
             {showDropdown && (
-              <div className="absolute right-0 mt-2 w-48 py-2 bg-white dark:bg-slate-800 rounded-md shadow-xl z-50 animate-scale-in">
+              <div className="absolute right-0 mt-2 w-48 py-2 bg-white dark:bg-slate-800 rounded-md shadow-xl z-50 animate-scale-in top-full">
                 <Link
                   to="/profile"
                   className="flex items-center px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700"

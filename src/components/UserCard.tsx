@@ -57,7 +57,7 @@ const UserCard = ({
       className="user-card block glass-card rounded-xl overflow-hidden animate-fade-in"
     >
       {/* Image Container */}
-      <div className="relative aspect-[3/4] bg-slate-100 overflow-hidden">
+      <div className="relative aspect-[3/4] bg-slate-100 dark:bg-slate-800 overflow-hidden">
         {!isImageLoaded && (
           <div className="absolute inset-0 image-loading" />
         )}
@@ -94,7 +94,7 @@ const UserCard = ({
           <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/60 to-transparent flex justify-between">
             <button
               onClick={handleMessageClick}
-              className="p-2 bg-white/90 rounded-full text-date-primary hover:bg-white transition-all"
+              className="p-2 bg-white/90 dark:bg-slate-800/90 rounded-full text-date-primary dark:text-white hover:bg-white dark:hover:bg-slate-700 transition-all"
               aria-label="Send message"
             >
               <MessageCircle className="w-5 h-5" />
@@ -105,7 +105,7 @@ const UserCard = ({
               className={`p-2 rounded-full transition-all ${
                 isFavorite 
                   ? 'bg-date-accent text-white' 
-                  : 'bg-white/90 text-date-secondary hover:bg-white'
+                  : 'bg-white/90 dark:bg-slate-800/90 text-date-secondary dark:text-white hover:bg-white dark:hover:bg-slate-700'
               }`}
               aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
@@ -123,16 +123,16 @@ const UserCard = ({
           </h3>
         </div>
         
-        <div className="flex items-center text-slate-500 text-sm mt-1">
+        <div className="flex items-center text-slate-500 dark:text-slate-400 text-sm mt-1">
           <MapPin className="w-3.5 h-3.5 mr-1" />
           <span>{location}</span>
         </div>
         
         {infoText && (
-          <div className="mt-2 text-sm text-slate-600">
+          <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
             <span>{infoText}</span>
             {infoDetail && (
-              <span className="block text-slate-400 text-xs mt-0.5">{infoDetail}</span>
+              <span className="block text-slate-400 dark:text-slate-500 text-xs mt-0.5">{infoDetail}</span>
             )}
           </div>
         )}

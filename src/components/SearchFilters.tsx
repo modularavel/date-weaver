@@ -69,7 +69,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/20 backdrop-blur-sm flex justify-center p-4 animate-fade-in">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/20 dark:bg-black/40 backdrop-blur-sm flex justify-center p-4 animate-fade-in">
       <div className="relative w-full max-w-2xl my-8 mx-auto glass-card rounded-xl shadow-xl animate-scale-in">
         <div className="p-5">
           <div className="flex items-center justify-between mb-4">
@@ -79,7 +79,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
             </h2>
             <button 
               onClick={onClose}
-              className="p-1.5 rounded-full hover:bg-slate-100 text-slate-500"
+              className="p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400"
             >
               <X className="w-5 h-5" />
             </button>
@@ -90,7 +90,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
             <FilterSection title="Education and profession" icon={<GraduationCap className="w-5 h-5" />}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Education</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Education</label>
                   <select 
                     className="select-field"
                     value={filters.education}
@@ -106,7 +106,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Profession</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Profession</label>
                   <select 
                     className="select-field"
                     value={filters.profession}
@@ -128,7 +128,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
             <FilterSection title="Marital status & children" icon={<Users className="w-5 h-5" />}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Marital status</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Marital status</label>
                   <select 
                     className="select-field"
                     value={filters.maritalStatus}
@@ -143,7 +143,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Children</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Children</label>
                   <select 
                     className="select-field"
                     value={filters.children}
@@ -162,7 +162,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
             <FilterSection title="Smoke and drinks" icon={<Wine className="w-5 h-5" />}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Smoke?</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Smoke?</label>
                   <select 
                     className="select-field"
                     value={filters.smoke}
@@ -176,7 +176,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Drink?</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Drink?</label>
                   <select 
                     className="select-field"
                     value={filters.drink}
@@ -275,7 +275,7 @@ const SearchFilters = ({ isOpen, onClose, onApply, onReset }: SearchFiltersProps
             </FilterSection>
           </div>
 
-          <div className="flex justify-between gap-4 pt-4 border-t border-slate-200 mt-4">
+          <div className="flex justify-between gap-4 pt-4 border-t border-slate-200 dark:border-slate-700 mt-4">
             <button 
               onClick={handleReset}
               className="btn-secondary"
