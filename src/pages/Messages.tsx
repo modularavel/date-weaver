@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Search, Send, Image, Smile, ChevronLeft } from 'lucide-react';
 import Header from '@/components/Header';
@@ -14,7 +13,7 @@ const mockMessages = [
     name: 'Eduardah',
     image: '/lovable-uploads/7205855e-5f82-453b-9efb-b9cf8b67bbd3.png',
     lastMessage: "Hi there! How are you today?",
-    timestamp: new Date(2023, 5, 15, 14, 30),
+    timestamp: '1 minute ago',
     isRead: false,
     isOnline: true,
     isPremium: true,
@@ -26,7 +25,7 @@ const mockMessages = [
     name: 'Loirinha',
     image: '/lovable-uploads/d75d8be6-fbdf-49a2-9880-190c34b0748f.png',
     lastMessage: "Thanks for the message! I'll check it out.",
-    timestamp: new Date(2023, 5, 15, 10, 15),
+    timestamp: '1 minute ago',
     isRead: true,
     isOnline: false,
     isPremium: true,
@@ -39,7 +38,7 @@ const mockMessages = [
     name: 'Vanessa',
     image: '/lovable-uploads/3b14247a-0fb7-43f6-9107-08f292b71528.png',
     lastMessage: "Did you see the new photo I uploaded?",
-    timestamp: new Date(2023, 5, 14, 18, 45),
+    timestamp: '1 minute ago',
     isRead: true,
     isOnline: false,
     isPremium: false,
@@ -52,19 +51,19 @@ const mockConversation = [
     id: '1',
     senderId: '1',
     text: "Hey! How are you today?",
-    timestamp: new Date(2023, 5, 15, 14, 20),
+    timestamp: '1 minute ago',
   },
   {
     id: '2',
     senderId: 'me',
     text: "I'm doing great, thanks for asking! How about you?",
-    timestamp: new Date(2023, 5, 15, 14, 25),
+    timestamp: '1 minute ago',
   },
   {
     id: '3',
     senderId: '1',
     text: "I'm good too. What are you up to this weekend?",
-    timestamp: new Date(2023, 5, 15, 14, 30),
+    timestamp: '1 minute ago',
   },
 ];
 
@@ -224,7 +223,7 @@ const Messages = () => {
                                   msg.senderId === 'me' ? 'text-white/80' : 'text-slate-500'
                                 }`}
                               >
-                                {new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                               asasas
                               </span>
                             </div>
                           </div>

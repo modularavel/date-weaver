@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Check, Trash2, Upload, Image } from 'lucide-react';
+import { Check, Trash2, Image } from 'lucide-react';
 import { toast } from 'sonner';
 
 export type PhotoStatus = 'approved' | 'pending' | 'rejected';
@@ -78,23 +77,11 @@ const PhotoGallery = ({
 
   return (
     <div className="space-y-8 animate-fade-in">
-      {/* Upload Button */}
-      {canEdit && (
-        <div className="flex justify-end">
-          <button 
-            className="btn-primary flex items-center gap-2"
-            onClick={() => toast.info('Upload functionality would be implemented here')}
-          >
-            <Upload className="w-4 h-4" />
-            <span>Upload photo</span>
-          </button>
-        </div>
-      )}
-      
       {/* Photos Sections */}
       {(title || photos.length > 0) && (
         <div>
-          {title && <h2 className="text-xl font-semibold mb-4">{title}</h2>}
+        {title && <div className="inline-flex items-center"><h2 className="text-xl font-semibold">{title}</h2></div>}
+            
           
           {Object.entries(groupedPhotos).map(([status, statusPhotos]) => {
             if (statusPhotos.length === 0) return null;
@@ -114,7 +101,7 @@ const PhotoGallery = ({
                   {message}
                 </div>
                 
-                <div className="photo-grid">
+                <div className="photo-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
                   {statusPhotos.map((photo) => (
                     <div 
                       key={photo.id} 

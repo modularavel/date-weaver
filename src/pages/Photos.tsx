@@ -1,8 +1,9 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import PhotoGallery from '@/components/PhotoGallery';
 import { type Photo } from '@/components/PhotoGallery';
+import { Upload } from 'lucide-react';
+import { toast } from 'sonner';
 
 // Mock photos data
 const mockPhotos: Photo[] = [
@@ -24,21 +25,26 @@ const mockPhotos: Photo[] = [
   },
   {
     id: '4',
-    url: '/lovable-uploads/246eecfa-a0d5-4282-a2c0-2d094d4c20f2.png',
+    url: '/lovable-uploads/3b14247a-0fb7-43f6-9107-08f292b71528.png',
     status: 'approved',
   },
   {
     id: '5',
-    url: '/lovable-uploads/aaae5426-fc95-4c3e-b6e5-7d86e9ee04df.png',
+    url: '/lovable-uploads/246eecfa-a0d5-4282-a2c0-2d094d4c20f2.png',
     status: 'approved',
   },
   {
     id: '6',
+    url: '/lovable-uploads/aaae5426-fc95-4c3e-b6e5-7d86e9ee04df.png',
+    status: 'approved',
+  },
+  {
+    id: '7',
     url: '/lovable-uploads/f7ab97fe-3a37-4f30-b4cf-f7dda4580058.png',
     status: 'pending',
   },
   {
-    id: '7',
+    id: '8',
     url: '/lovable-uploads/08da76f3-7d52-4803-b910-90cb2b1921fe.png',
     status: 'rejected',
   },
@@ -64,7 +70,14 @@ const Photos = () => {
       
       <main className="container mx-auto px-4 py-6 animate-fade-in">
         <div className="glass-card rounded-xl overflow-hidden p-6">
-          <h1 className="text-2xl font-bold mb-6">My photos</h1>
+          <div className="inline-flex items-center justify-between w-full mb-5">
+            <h1 className="text-2xl font-bold">My photos</h1>
+            {/* Upload Button */}
+            <button className="btn-primary flex items-center gap-2" onClick={() => toast.info('Upload functionality would be implemented here')}>
+              <Upload className="w-4 h-4" />
+              <span>Upload photo</span>
+            </button>
+          </div>
           
           <PhotoGallery 
             photos={photos}

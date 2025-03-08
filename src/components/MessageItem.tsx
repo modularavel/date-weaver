@@ -11,7 +11,7 @@ export type MessageItemProps = {
   name: string;
   image: string;
   lastMessage: string;
-  timestamp: Date;
+  timestamp: string;
   isRead?: boolean;
   isOnline?: boolean;
   isPremium?: boolean;
@@ -38,14 +38,8 @@ const MessageItem = ({
 }: MessageItemProps) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  const formatMessageTime = (date: Date) => {
-    if (isToday(date)) {
-      return format(date, 'HH:mm');
-    } else if (isYesterday(date)) {
-      return 'Yesterday';
-    } else {
-      return format(date, 'dd MMM');
-    }
+  const formatMessageTime = (date) => {
+    return date;
   };
   
   const toggleFavorite = (e: React.MouseEvent) => {
