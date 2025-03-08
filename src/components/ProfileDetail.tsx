@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { MapPin, Calendar, Heart, MessageCircle, ChevronLeft, CheckCheck } from 'lucide-react';
 import { toast } from 'sonner';

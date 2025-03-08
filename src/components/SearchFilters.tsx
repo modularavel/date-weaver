@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { X, Filter } from 'lucide-react';
 import EducationProfessionSection from './filters/EducationProfessionSection';

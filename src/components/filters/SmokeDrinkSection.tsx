@@ -1,4 +1,3 @@
-
 import React from 'react';
 import FilterSection from './FilterSection';
 import { Wine } from 'lucide-react';
