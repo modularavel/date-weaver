@@ -92,14 +92,14 @@ const MessageItem = ({
         
         {/* Online Status */}
         {isOnline && (
-          <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white"></span>
+          <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white dark:border-slate-800"></span>
         )}
       </div>
       
       {/* Message Content */}
       <div className="flex-grow min-w-0">
         <div className="flex justify-between items-center mb-1">
-          <h3 className="font-medium text-slate-900 truncate pr-2 flex items-center">
+          <h3 className="font-medium text-slate-900 dark:text-slate-100 truncate pr-2 flex items-center">
             {name}
             {isPremium && (
               <span className="ml-1 text-amber-500">★</span>
@@ -110,13 +110,13 @@ const MessageItem = ({
               </span>
             )}
           </h3>
-          <span className="text-xs text-slate-500 whitespace-nowrap">
+          <span className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">
             {formatMessageTime(timestamp)}
           </span>
         </div>
         
         <div className="flex items-center">
-          <p className={`text-sm truncate max-w-[180px] md:max-w-xs ${isRead ? 'text-slate-500' : 'text-slate-900 font-medium'}`}>
+          <p className={`text-sm truncate max-w-[180px] md:max-w-xs ${isRead ? 'text-slate-500 dark:text-slate-400' : 'text-slate-900 dark:text-slate-100 font-medium'}`}>
             {lastMessage}
           </p>
           
@@ -130,14 +130,14 @@ const MessageItem = ({
       <div className="flex items-center ml-2 space-x-2">
         <button
           onClick={toggleFavorite}
-          className={`p-1.5 rounded-full ${isFavorite ? 'text-amber-500 hover:bg-amber-50' : 'text-slate-400 hover:bg-slate-100'}`}
+          className={`p-1.5 rounded-full ${isFavorite ? 'text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/30' : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
         >
           <Star className={`w-4 h-4 ${isFavorite ? 'fill-amber-500' : ''}`} />
         </button>
         
         <button
           onClick={showUserInfo}
-          className="p-1.5 rounded-full text-slate-400 hover:bg-slate-100"
+          className="p-1.5 rounded-full text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
         >
           <Info className="w-4 h-4" />
         </button>
