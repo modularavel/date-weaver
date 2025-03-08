@@ -18,6 +18,7 @@ export type MessageItemProps = {
   isVerified?: boolean;
   isFavorite?: boolean;
   onClick?: () => void;
+  className?: string;
 };
 
 const MessageItem = ({
@@ -33,6 +34,7 @@ const MessageItem = ({
   isVerified = false,
   isFavorite = false,
   onClick,
+  className = '',
 }: MessageItemProps) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -69,7 +71,7 @@ const MessageItem = ({
     <div 
       className={`flex items-center p-3 border-b border-slate-100 hover:bg-slate-50 transition-colors cursor-pointer ${
         !isRead ? 'bg-slate-50' : ''
-      }`}
+      } ${className}`}
       onClick={handleClick}
     >
       {/* User Avatar */}
