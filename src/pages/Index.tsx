@@ -138,10 +138,10 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen bg-slate-50">
+    <>
       <Header />
       
-      <main className="container max-w-6xl mx-auto px-4 py-6 animate-fade-in">
+      <main className="container mx-auto px-4 py-6 animate-fade-in">
         {/* Search Form */}
         <div className="mb-8">
           <form onSubmit={handleSearch}>
@@ -253,7 +253,7 @@ const Index = () => {
             ))}
           </div>
         ) : users.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
             {users.map((user) => (
               <UserCard key={user.id} {...user} />
             ))}
@@ -280,7 +280,7 @@ const Index = () => {
         onApply={handleFilterChange}
         onReset={handleResetFilters}
       />
-    </div>
+    </>
   );
 };
 

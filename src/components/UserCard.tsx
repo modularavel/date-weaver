@@ -57,7 +57,7 @@ const UserCard = ({
       className="user-card block glass-card rounded-xl overflow-hidden animate-fade-in"
     >
       {/* Image Container */}
-      <div className="relative aspect-[3/4] bg-slate-100 dark:bg-slate-800 overflow-hidden">
+      <div className="relative aspect-[0.55] bg-slate-100 dark:bg-slate-800 overflow-hidden">
         {!isImageLoaded && (
           <div className="absolute inset-0 image-loading" />
         )}
